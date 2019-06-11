@@ -1,4 +1,4 @@
-# terraform-aws-sns-topic-notify
+# terraform-aws-cloudwatch-sns-topic-notify
 
 Terraform doesn't have the ability to invoke an AWS Lambda function directly or to Notify an AWS SNS Topic.
 
@@ -59,7 +59,7 @@ resource "aws_sns_topic_subscription" "lambda_update_asg" {
 
 # Send a notification to the topic <--- This Module
 module "notify" {
-  source        = "git::https://github.com/bitflight-public/terraform-aws-sns-topic-notify.git?ref=master"
+  source        = "git::https://github.com/cloudposse/terraform-aws-sns-topic-notify.git?ref=master"
   namespace     = "cp"
   stage         = "staging"
   name          = "lambda-update-asg"
